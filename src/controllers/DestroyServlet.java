@@ -38,9 +38,7 @@ public class DestroyServlet extends HttpServlet {
             // 該当のIDのメッセージ1件のみをデータベースから取得
             Message m = em.find(Message.class, (Integer)(request.getSession().getAttribute("message_id")));
 
-            em.getTransaction().begin();
-            em.remove(m);       // データ削除
-            em.getTransaction().commit();
+
             em.getTransaction().begin();
             em.remove(m);       // データ削除
             em.getTransaction().commit();
